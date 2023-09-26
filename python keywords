@@ -1,0 +1,188 @@
+# 0. Printing  blank line the introduction
+import keyword
+print()
+print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+print("               *** Python Keywords ***             ")
+print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n")
+
+
+# 1. Python code to demonstrate working of iskeyword()
+# importing "keyword" for keyword operations
+
+# printing all keywords at once using "kwlist()"
+print("1. The list of keywords is : ")
+print()
+print(keyword.kwlist)
+
+print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n")
+
+
+
+# 2. 'True', 'False', and 'None' keywords
+print("2. This is True, False, None testing : \n")
+
+# True = 1 and False = 0
+print(False == 0)
+print(True == 1)
+
+print(True + True + True)
+print(True + False + False)
+
+# None is not 0
+print(None == 0)
+# It is imposible to creat multiple None objects and assign them to variables
+print(None == [])
+
+print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n")
+
+
+
+# 3. 'and', 'or', 'not', 'in', 'is' keywords
+print("3. This is 'and', 'or', 'not', 'in', 'is' testing : \n")
+
+# showing logical operation
+# or (returns True)
+print(True or False)
+
+# showing logical operation
+# and (returns False)
+print(True and False)
+
+# showing logical operation
+# not (returns False)
+print(not True)
+
+# using "in" to check
+if 's' in "geeksforgeeks":
+    print("s is part of geeksforgeeks")
+else:
+    print("s is not part of geeksforgeeks")
+
+# using "in" to loop through
+for i in 'geeksforgeeks':
+    # using (end=" ") to remove new the default line
+    print(i, end=" ")
+
+# using "\r" to move the cursor to the beginning of the current line
+print("\r")
+
+# using "is" to cheak object identity
+# string is immutable (cannot be changed once allocated)
+# hence occupy same memory location
+print(' ' is ' ')
+
+# using "is" to cheak object identity
+# dictionary is mutable (can be changed once allocated)
+# hence occupy different memory location
+print({} is {})
+
+print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n")
+
+
+
+# 4. Iteration keywords 'for', 'while', 'break', 'continue'
+print("4. This is 'for', 'while', 'break', 'continue'  testing : \n")
+
+# Using for loop
+for i in range(10):
+    print(i, end=" ")
+
+    # break the loop as soon it sees 6
+    if i == 6:
+        break
+
+print()
+
+# loop from 1 to 10
+i = 0
+while i <= 10:
+
+    # if i is equals to 6
+    # continue to next iteration
+    # without printing
+    if i == 6:
+        i += 1
+        continue
+    else:
+        # otherwise print the value
+        # of i
+        print(i, end=" ")
+
+    i += 1
+
+print("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n")
+
+
+
+# 5. Conditional keywords - if, else, elif
+print("5. This is if, else, elif testing : \n")
+
+# Python program to illustrate if-elif-else ladder
+# !/user/bin/python
+
+i = 20
+if i == 10:
+    print("i is 10")
+elif i == 20:
+    print("i is 20")
+else:
+    print("i is not present")
+
+print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n")
+
+
+
+# 6. 'def', 'return', 'yield' keywords
+print("6. This is 'def', 'return', 'yield' testing : \n")
+
+# def keyword
+# Creating a Function called 'fun()'
+
+
+def fun():
+    print("Inside Function \n")
+
+
+# Calling The Function 'fun()'
+fun()
+
+# 'return' keyword
+#  use to return from the function
+
+# function for calculating sum of first 10 natural number
+
+
+def fun():
+    s = 0
+
+    for i in range(1, 11):
+        s += i
+    # returning the result
+    return s
+
+
+print(fun())
+
+print()
+
+# *yield keyword
+# used like return statment but is used to return a generator
+
+
+def fun():
+    s = 0
+
+    for i in range(1, 11):
+        s += i
+        yield s
+
+
+for i in fun():
+    print(i)
+
+
+print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n")
+
+
+print("\t**********Not finised**********")
+print()
