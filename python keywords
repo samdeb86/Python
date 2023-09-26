@@ -1,124 +1,115 @@
-# 0. Printing  blank line the introduction
 import keyword
+
+def print_section_header(header_text):
+    print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+    print(f"               *** {header_text} ***             ")
+    print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n")
+
+# 0. Introduction
 print()
-print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-print("               *** Python Keywords ***             ")
-print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n")
+print_section_header("Python Keywords")
 
 
-# 1. Python code to demonstrate working of iskeyword()
-# importing "keyword" for keyword operations
-
-# printing all keywords at once using "kwlist()"
+# 1. List of Keywords
 print("1. The list of keywords is : ")
 print()
+
+# 'keyword.kwlist' contains all the reserved keywords in python
 print(keyword.kwlist)
-
-print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n")
-
+# '\t' is used for a horizontal tab
+print_section_header("\t\t")
 
 
 # 2. 'True', 'False', and 'None' keywords
 print("2. This is True, False, None testing : \n")
 
 # True = 1 and False = 0
-print(False == 0)
-print(True == 1)
+print(f"False == 0: {False == 0}")
+print(f"True == 1: {True == 1}")
 
-print(True + True + True)
-print(True + False + False)
+print(f"True + True + True: {True + True + True}")
+print(f"True + False + False: {True + False + False}")
 
 # None is not 0
-print(None == 0)
-# It is imposible to creat multiple None objects and assign them to variables
-print(None == [])
+print(f"None == 0: {None == 0}")
 
-print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n")
-
+# It is impossible to create multiple None objects and assign them to variables
+print(f"None == []: {None == []}")
+print_section_header("\t\t")
 
 
 # 3. 'and', 'or', 'not', 'in', 'is' keywords
 print("3. This is 'and', 'or', 'not', 'in', 'is' testing : \n")
 
-# showing logical operation
+# Showing logical operations
 # or (returns True)
-print(True or False)
+print(f"True or False: {True or False}")
 
-# showing logical operation
+# Showing logical operations
 # and (returns False)
-print(True and False)
+print(f"True and False: {True and False}")
 
-# showing logical operation
+# Showing logical operations
 # not (returns False)
-print(not True)
+print(f"not True: {not True}")
 
-# using "in" to check
+# Using "in" to check
 if 's' in "geeksforgeeks":
     print("s is part of geeksforgeeks")
 else:
     print("s is not part of geeksforgeeks")
 
-# using "in" to loop through
-for i in 'geeksforgeeks':
-    # using (end=" ") to remove new the default line
-    print(i, end=" ")
+# Using "in" to loop through
+for char in 'geeksforgeeks':
+    print(char, end=" ")
 
-# using "\r" to move the cursor to the beginning of the current line
+# Using "\r" to move the cursor to the beginning of the current line
 print("\r")
 
-# using "is" to cheak object identity
+# Using "is" to check object identity
 # string is immutable (cannot be changed once allocated)
-# hence occupy same memory location
-print(' ' is ' ')
+# hence occupy the same memory location
+print(f"' ' is ' ': {' ' is ' '}")
 
-# using "is" to cheak object identity
+# Using "is" to check object identity
 # dictionary is mutable (can be changed once allocated)
-# hence occupy different memory location
-print({} is {})
-
-print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n")
-
+# hence occupy different memory locations
+print("{} is {}:",{} is {})
+print_section_header("\t\t")
 
 
 # 4. Iteration keywords 'for', 'while', 'break', 'continue'
 print("4. This is 'for', 'while', 'break', 'continue'  testing : \n")
 
 # Using for loop
+print("Using for loop:")
 for i in range(10):
     print(i, end=" ")
-
     # break the loop as soon it sees 6
     if i == 6:
         break
 
 print()
 
-# loop from 1 to 10
+# Using while loop
+print("Using while loop:")
 i = 0
 while i <= 10:
-
-    # if i is equals to 6
-    # continue to next iteration
-    # without printing
+    # if i is equals to 6 continue to next iteration without printing
     if i == 6:
         i += 1
         continue
     else:
-        # otherwise print the value
-        # of i
+        # otherwise print the value of i
         print(i, end=" ")
-
     i += 1
 
-print("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n")
-
+print("\n")
+print_section_header("\t\t")
 
 
 # 5. Conditional keywords - if, else, elif
 print("5. This is if, else, elif testing : \n")
-
-# Python program to illustrate if-elif-else ladder
-# !/user/bin/python
 
 i = 20
 if i == 10:
@@ -128,61 +119,45 @@ elif i == 20:
 else:
     print("i is not present")
 
-print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n")
-
+print_section_header("\t\t")
 
 
 # 6. 'def', 'return', 'yield' keywords
 print("6. This is 'def', 'return', 'yield' testing : \n")
 
-# def keyword
-# Creating a Function called 'fun()'
-
-
+# 'def' keyword
 def fun():
     print("Inside Function \n")
-
 
 # Calling The Function 'fun()'
 fun()
 
-# 'return' keyword
-#  use to return from the function
-
-# function for calculating sum of first 10 natural number
-
-
-def fun():
+# 'return' keyword 
+# use to return result from the function
+def sum_of_first_10_numbers():
     s = 0
-
     for i in range(1, 11):
         s += i
-    # returning the result
     return s
 
+print(f"Sum of first 10 natural numbers: {sum_of_first_10_numbers()}\n")
 
-print(fun())
-
-print()
-
-# *yield keyword
+# 'yield' keyword 
 # used like return statment but is used to return a generator
-
-
-def fun():
+def generate_sum_of_numbers():
     s = 0
-
     for i in range(1, 11):
         s += i
         yield s
 
-
-for i in fun():
+print("Generated sums:")
+for i in generate_sum_of_numbers():
     print(i)
 
+print_section_header("\t\t")
 
-print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n")
 
 
-print("\t**********Not finised**********")
+
+print("\t**********Not finished**********")
 print()
