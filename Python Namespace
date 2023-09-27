@@ -1,0 +1,93 @@
+# Function to print a section header
+def print_section_header(header_text):
+    border = "~" * 50
+    print(f"{border}\n{' ' * 15}*** {header_text} ***\n{border}\n")
+
+
+# Introduction
+print_section_header("Python Namespace")
+
+
+
+
+# Section 1: Global, local, nested local namespaces
+def section_1():
+    print("Global, local, nested local namespaces testing: \n")
+
+    # Global variable in the global namespace
+    global_var = 5
+
+    def some_func():
+        # Local variable in some_func's namespace
+        local_var = 6
+        print(f"Inside some_func:\n   Local namespace local_var = {local_var}")
+
+        def some_inner_func():
+            # Nested Local variable in some_inner_func's namespace
+            nested_var = 7
+            print(f"Inside some_inner_func:\n   Nested local namespace nested_var = {nested_var}")
+
+        some_inner_func()
+
+    # Access global_var from the global namespace
+    print(f"Global global_var = {global_var}")
+
+    some_func()
+
+section_1()
+
+print_section_header(f"{' *** '*3}")
+
+
+
+# Section 2: Global variable
+def section_2():
+    print("2. Global variable:\n")
+
+    count = 5
+
+    def some_method():
+        nonlocal count  # Use nonlocal instead of global if you want to modify an outer local variable
+        count += 1
+        print(f"Updated count: {count}")
+
+    some_method()
+
+section_2()
+
+print_section_header(f"{' *** '*3}")
+
+
+
+# Section 3: Scope of an object
+'''
+Note - 
+Scope refers to the coding region from which a particular Python object is accessible.
+Access to an object is determined by the scope of the object itself.
+
+Example:
+'''
+
+def scetion_3():
+    print("Example - Scope of Objects in Python:\n")
+
+    # Global variable
+    global_var = 10
+
+    def example_function():
+        # Local variable
+        local_var = 5
+        print("Inside the function:")
+        print(f"Accessing local_var: {local_var}")
+        print(f"Accessing global_var: {global_var}")
+
+    # Accessing global_var
+    print("Outside the function:")
+    print(f"Accessing global_var: {global_var}\n")
+
+    # Calling the example_function
+    example_function()
+
+scetion_3()
+
+print_section_header(f"{' *** '*3}")
