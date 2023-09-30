@@ -1,93 +1,88 @@
 # Function to print a section header
 def print_section_header(header_text):
+    """
+    This function prints a section header with a specified header text. 
+    It consists of a border of "~" characters and the header text enclosed in "***".
+    
+    :param header_text: The text to be displayed in the section header.
+    """
     border = "~" * 50
     print(f"{border}\n{' ' * 15}*** {header_text} ***\n{border}\n")
 
 
 # Introduction
+# calling the print_section_header function to add lines for visual clarity
 print_section_header("Python Namespace")
 
 
 
 
-# Section 1: Global, local, nested local namespaces
-def section_1():
-    print("Global, local, nested local namespaces testing: \n")
 
-    # Global variable in the global namespace
-    global_var = 5
-
-    def some_func():
-        # Local variable in some_func's namespace
-        local_var = 6
-        print(f"Inside some_func:\n   Local namespace local_var = {local_var}")
-
-        def some_inner_func():
-            # Nested Local variable in some_inner_func's namespace
-            nested_var = 7
-            print(f"Inside some_inner_func:\n   Nested local namespace nested_var = {nested_var}")
-
-        some_inner_func()
-
-    # Access global_var from the global namespace
-    print(f"Global global_var = {global_var}")
-
-    some_func()
-
-section_1()
-
-print_section_header(f"{' *** '*3}")
-
-
-
-# Section 2: Global variable
-def section_2():
-    print("2. Global variable:\n")
-
-    count = 5
-
-    def some_method():
-        nonlocal count  # Use nonlocal instead of global if you want to modify an outer local variable
-        count += 1
-        print(f"Updated count: {count}")
-
-    some_method()
-
-section_2()
-
-print_section_header(f"{' *** '*3}")
-
-
-
-# Section 3: Scope of an object
-'''
+# Section 1: Scope of an object
+"""
 Note - 
 Scope refers to the coding region from which a particular Python object is accessible.
 Access to an object is determined by the scope of the object itself.
 
 Example:
-'''
+"""
+print("Scope of Objects in Python:\n")
+# Global variable
+global_var = 10
 
-def scetion_3():
-    print("Example - Scope of Objects in Python:\n")
+def some_function():
+    """
+    This function demonstrates the scope of objects in Python.
+    It showcases the accessibility of local and global variables within functions.
+    """
+    # Local variable
+    local_var = 5
+    print("Inside the some_function :-")
 
-    # Global variable
-    global_var = 10
+    print(f"\tAccessing global_var: \t{global_var}")
+    print(f"\tAccessing local_var: \t{local_var}")
+    
+    def some_inner_func():
+        """ 
+        Nested Local variable scope in some_inner_func's namespace
+        """
+        nested_local_var = 7
+        # You can't access it outside some_inner_func
+        print(f"\tAccessing nested_var: \t{nested_local_var}")
+    # calling some_inner_func()
+    some_inner_func()
 
-    def example_function():
-        # Local variable
-        local_var = 5
-        print("Inside the function:")
-        print(f"Accessing local_var: {local_var}")
-        print(f"Accessing global_var: {global_var}")
+# Accessing global_var
+print(f"Outside the function :- \n\tAccessing global_var: \t{global_var}\n")
 
-    # Accessing global_var
-    print("Outside the function:")
-    print(f"Accessing global_var: {global_var}\n")
+# Calling the example_function
+some_function()
 
-    # Calling the example_function
-    example_function()
+# calling the print_section_header function to add lines for visual clarity 
+print_section_header(f"{' *** '*3}")
 
-scetion_3()
 
+
+
+
+# Section 2: Global keyword
+print("2. Global keyword testing:\n")
+count = 5
+
+def some_method():
+    """
+    This function increments a global variable 'count'.
+    It showcases the usage of the 'global' keyword to modify a global variable within a function.
+    """
+    global count    # You can access this variable outside the function
+    print(f"Count : {count}")
+    count += 1
+
+# Calling the some_method function
+some_method()
+
+# printing the updated count outside the function
+print(f"Updated count: {count}")
+
+# calling the print_section_header function to add lines for visual clarity
 print_section_header(f"{' *** '*3}")
