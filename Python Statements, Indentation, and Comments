@@ -1,0 +1,121 @@
+# Function to print a section header
+def print_section_header(header_text):
+    """
+    This section defines a function print_section_header that takes a 
+    header_text argument and prints a section header with a border 
+    made of tildes (~) and the provided header text.
+    """
+    border = "~" * 50
+    print(f"{border}\n*** {header_text} ***\n{border}\n")
+
+
+# Introduction
+# calling the print_section_header function to add lines for visual clarity
+print_section_header("Python Statements, Indentation, and Comments")
+
+
+
+
+
+# Section 1: Statements
+print("1. Python Statements Testing:\n")
+
+# Example of a statement using a continuation character (\):
+sum_of_numbers = (
+    1 + 2 + 3 +
+    4 + 5 + 6 +
+    7 + 8 + 9
+)
+print(f"Sum of numbers: \t{sum_of_numbers}")
+
+# Example of a statement using parentheses ():
+sum_product_of_numbers = (
+    1 * 2 * 3 +
+    7 + 8 + 9
+)
+print(f"Product of numbers: \t{sum_product_of_numbers}")
+
+# Example of a statement using square brackets []:
+footballers = [
+    'MESSI',
+    'NEYMAR',
+    'SUAREZ'
+]
+print(f"Footballers:\t\t{footballers}")
+
+# Example of a statement using braces {}:
+set_of_numbers = {
+    1 + 2 + 3 + 4 + 5 + 6 +
+    7 + 8 + 9
+}
+print(f"Set of numbers: \t{set_of_numbers}")
+
+# Example of statements using semicolons (;):
+flag  = 2
+ropes = 3
+pole  = 4
+print(f"Flag: \t\t\t {flag} \nRopes: \t\t\t {ropes} \nPole: \t\t\t {pole} \n")
+
+# calling the print_section_header function to add lines for visual clarity
+print_section_header(" " * 14 + " *** " * 3 + " " * 14)
+
+
+
+
+
+# Section 2: Indentation
+print("2.Indentation testing: ")
+# Example- 1
+print("Example-1 testing:")
+site = 'gfg'
+
+# Check if the 'site' variable is equal to 'gfg'
+if site == 'gfg':
+    print("Logging on to geekforgeeks...")
+else:
+    print("Retype the URL.")
+
+# Print "All set!" regardless of the condition above
+print("All set!")
+
+
+# Example- 2
+print("\nExample-2 testing:")
+j = 1
+
+while j <= 5:
+    print(j)
+    j += 1
+
+
+# calling the print_section_header function to add lines for visual clarity
+print_section_header(" " * 14 + " *** " * 3 + " " * 14)
+
+
+
+
+
+# Section 3: Comments
+print("3. Comments testing: \n")
+
+# Single line comments
+# This is a singleline comment
+# Print "GeekforGeeks" to console
+print("Singleline comments")
+
+a, b =1, 3  # Declaring two integers
+sum = a + b # Adding two integers
+print(sum)  # Desplaying the output
+
+# Multi-Line Comments
+"""
+Multi-Line Comments (Docstrings): 
+Python doesn't have a specific syntax for multi-line. 
+Instead, it uses multi-line strings (triple-quoted strings) 
+as docstrings, which are typically used to provide 
+documentation for functions, classes, and modules.
+"""
+print("Multi-line comments")
+
+# calling the print_section_header function to add lines for visual clarity
+print_section_header(" " * 14 + " *** " * 3 + " " * 14)
