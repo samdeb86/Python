@@ -1,13 +1,26 @@
+# importing all the keywords in python
 import keyword
 
+# Function to print a section header
 def print_section_header(header_text):
-    print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-    print(f"               *** {header_text} ***             ")
-    print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n")
+    """
+    This function prints a section header with a specified header text. 
+    It consists of a border of "~" characters and the header text enclosed in "***".
+    :param header_text: The text to be displayed in the section header.
+    """
+    border = "~" * 50
+    print(f"{border}\n{' ' * 15}*** {header_text} ***\n{border}\n")
+
+
+
+
 
 # 0. Introduction
-print()
+# calling the print_section_header function to add lines for visual clarity
 print_section_header("Python Keywords")
+
+
+
 
 
 # 1. List of Keywords
@@ -17,7 +30,11 @@ print()
 # 'keyword.kwlist' contains all the reserved keywords in python
 print(keyword.kwlist)
 # '\t' is used for a horizontal tab
+# calling the print_section_header function to add lines for visual clarity
 print_section_header("\t\t")
+
+
+
 
 
 # 2. 'True', 'False', and 'None' keywords
@@ -35,7 +52,12 @@ print(f"None == 0: {None == 0}")
 
 # It is impossible to create multiple None objects and assign them to variables
 print(f"None == []: {None == []}")
+
+# calling the print_section_header function to add lines for visual clarity
 print_section_header("\t\t")
+
+
+
 
 
 # 3. 'and', 'or', 'not', 'in', 'is' keywords
@@ -75,7 +97,12 @@ print(f"' ' is ' ': {' ' is ' '}")
 # dictionary is mutable (can be changed once allocated)
 # hence occupy different memory locations
 print("{} is {}:",{} is {})
+
+# calling the print_section_header function to add lines for visual clarity
 print_section_header("\t\t")
+
+
+
 
 
 # 4. Iteration keywords 'for', 'while', 'break', 'continue'
@@ -105,7 +132,12 @@ while i <= 10:
     i += 1
 
 print("\n")
+
+# calling the print_section_header function to add lines for visual clarity
 print_section_header("\t\t")
+
+
+
 
 
 # 5. Conditional keywords - if, else, elif
@@ -119,7 +151,11 @@ elif i == 20:
 else:
     print("i is not present")
 
+# calling the print_section_header function to add lines for visual clarity
 print_section_header("\t\t")
+
+
+
 
 
 # 6. 'def', 'return', 'yield' keywords
@@ -154,6 +190,7 @@ print("Generated sums:")
 for i in generate_sum_of_numbers():
     print(i)
 
+# calling the print_section_header function to add lines for visual clarity
 print_section_header("\t\t")
 
 
